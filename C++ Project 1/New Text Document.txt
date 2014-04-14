@@ -1,0 +1,34 @@
+//Houses Hand
+           cout<<"\n\n";
+           cout<<"The house has been dealt a ";
+           dealCrd(value, suit, total);
+           hTot=hrTot+value;
+           hrTot=hTot;
+           cout<<" , ";  
+           dealCrd(value, suit, total);
+           hTot=hrTot+value;
+           hrTot=hTot;
+           cout<<" and a ";
+           dealCrd(value, suit, total);
+           hTot=hrTot+value;
+           cout<<"\n\n";
+           cout<<"The house's score is: ";
+           cout<<hTot;
+           cout<<"\n\n";
+           
+
+
+
+//Houses Hand if Player Stays
+           cout<<"The house has been dealt a ";
+           dealCrd(value, suit, total);
+           cout<<" and a ";  
+           hTot=hrTot+value;
+           hrTot=hTot;
+           dealCrd(value, suit, total);
+           cout<<"\n";
+           cout<<"\n";
+           cout<<"House's score is: ";
+           hTot=hrTot+value;
+          cout<<hTot;
+         cout<<"\n\n";
