@@ -5,9 +5,9 @@
  * CSC 5 (42450) | Project 1: Black Jack Game
  */
 //System Libraries
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <iostream>//Standard input/output
+#include <cstdlib>//Random function srand
+#include <ctime>//Time for random and program
 using namespace std;
 
 //Global Constants
@@ -118,12 +118,12 @@ void dealCrd(int& crdValu, int& crdSuit, int& pTotal){
     if (crdValu==10){
         cout<<"Jack of ";
     }if (crdValu==11||crdValu==1){
-        cout<<"Ace of ";
         if (pTotal<=10){            
             crdValu=11;
         }else{
             crdValu=1;
         }
+        cout<<"Ace of ";
     }if (crdValu==12){
         cout<<"Queen of ";
         crdValu=10;
