@@ -2,13 +2,11 @@
  * File:   main.cpp
  * Author: Victor Medel
  * Created on April 13, 2014, 5:02 PM
- * CSC 5 (42450) | Project 1: 2 or 3 Card Game of 21
+ * CSC 5 (42450) | Project 1: Black Jack Game
  */
-
 //System Libraries
 #include <iostream>
 #include <cstdlib>
-#include <cmath>
 #include <ctime>
 using namespace std;
 
@@ -24,14 +22,7 @@ int main(int argc, char** argv) {
     int value, suit,pTotal,rTotal,total,hTot,hrTot;
     char ans;
     hrTot=0;
-    rTotal=0;  
-    
-    
-    
-    
-    
-    
-    
+    rTotal=0;    
     //Player's Initial Hand
     cout<<"You have been dealt the following cards: ";
     cout<<"\n";
@@ -52,7 +43,7 @@ int main(int argc, char** argv) {
     cout<<"Enter y for yes, n for no: ";
     cin>>ans;
        if (ans=='y'||ans=='Y'){
-           //Players Additional Card
+           //Players Additional Cards
            cout<<"\n";
            cout<<"You have been dealt a ";
            dealCrd(value, suit, total);
@@ -79,7 +70,7 @@ int main(int argc, char** argv) {
            }
         }else;
    }     
-   //House's Initial Hand
+   //House's Hand
    cout<<"\n";
    cout<<"The house has been dealt the following cards: ";
    cout<<"\n";
@@ -92,14 +83,32 @@ int main(int argc, char** argv) {
    hTot=hrTot+value;
    hrTot=hTot;
    }while(hTot<16);
-   cout<<"\n\n";
+   cout<<"\n";
    cout<<"The house's score is: ";
    cout<<hTot;
-   cout<<"\n\n";
-   
-  
-   
-   
+   cout<<"\n";
+   //Outcome Output
+   if(pTotal==21||(pTotal>hTot&&pTotal<21)){
+       cout<<"\n";
+       cout<<"Congratulations! You have won";
+       cout<<"\n";
+   }else if(hTot>21&&pTotal<=21) {
+       cout<<"\n";
+       cout<<"Congratulations! You have won";
+       cout<<"\n";
+   }else if(pTotal>21){
+       cout<<"\n";
+       cout<<"Bust";
+       cout<<"\n"; 
+   }else if(pTotal<hTot&&hTot<=21){
+      cout<<"\n";
+       cout<<"House Wins";
+       cout<<"\n";
+   }else if(pTotal==hTot){
+       cout<<"\n";
+       cout<<"Stand-Off/Draw, Play Again";
+       cout<<"\n";
+   }
     //Exit Stage Right
     return 0;
 }
