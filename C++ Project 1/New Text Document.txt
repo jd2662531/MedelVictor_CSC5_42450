@@ -18,6 +18,16 @@
            
 
 
+ if((pTotal==21)||(hTot>21)||(pTotal>hTot&&pTotal<21)){
+       cout<<"\n";
+       cout<<"Congratulations! You have won.";
+       cout<<"\n";
+       } else if ((pTotal>21)||(hTot==21)||(hTot>pTotal)){
+       cout<<"\n";
+       cout<<"You've Lost";
+       cout<<"\n";
+       } else;
+
 
 //Houses Hand if Player Stays
            cout<<"The house has been dealt a ";

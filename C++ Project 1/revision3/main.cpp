@@ -55,7 +55,7 @@ int main(int argc, char** argv) {
     cout<<"Would you like another card?\n";
     cout<<"Enter y for yes, n for no: ";
     cin>>ans;
-       if (ans=='y'||ans=='Y'){
+       if (ans=='y'||ans=='Y'){  //If answer is no dealer should still be dealt another card.
            //Players Additional Card
            cout<<"\n";
            cout<<"You have been dealt a ";
@@ -73,32 +73,28 @@ int main(int argc, char** argv) {
            cout<<"The house's score is now: ";
            cout<<hTot;
            cout<<"\n";
-           if (pTotal==21){
+           if ((pTotal==21)||(hTot>21&&pTotal<21)){
                cout<<"Congratulations! You have won.";
-           }else if (pTotal>21){
+           }else if ((pTotal>21)||(hTot>pTotal&&hTot<21)){
                cout<<"\n";
                cout<<"You've Lost";
                cout<<"\n";
-           }else if (pTotal<21){
+           }else if (hTot==pTotal){
+               cout<<"Play Again";
            }
-       }else if((pTotal==21)||(hTot>21)||(pTotal>hTot)){
+        }else;
+   }else if ((pTotal==21)||(hTot>21)||(pTotal>hTot&&pTotal<21)){
        cout<<"\n";
        cout<<"Congratulations! You have won.";
        cout<<"\n";
-       } else if ((pTotal>21)||(hTot==21)||(hTot>pTotal)){
-       cout<<"\n";
-       cout<<"You've Lost";
-       cout<<"\n";
-       } else;
-   }else if ((pTotal==21)||(hTot>21)||(pTotal>hTot)){
-       cout<<"\n";
-       cout<<"Congratulations! You have won.";
-       cout<<"\n";
-   }else if (pTotal>21||hTot>pTotal){
+   }else if ((pTotal>21)||(hTot>pTotal)||(hTot==21)){
        cout<<"\n";
        cout<<"You've Lost";
        cout<<"\n";
    }     
+   
+ 
+   
     //Exit Stage Right
     return 0;
 }
