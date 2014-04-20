@@ -6,7 +6,6 @@
  */
 
 //System Libraries
-//Take out if not needed
 #include <cstdlib>//Random function srand
 #include <iostream>//Standard input/output
 #include <fstream>//File input/output
@@ -32,17 +31,18 @@ int main(int argc, char** argv) {
         cout<<"Select From The Menu"<<endl;
         cout<<"\n";
         cout<<"1. Play Blackjack"<<endl;
-        cout<<"2. Blackjack Game Rules"<<endl;
-        cout<<"***Anything Else Exit***"<<endl;
+        cout<<"2. Blackjack Game Overview"<<endl;
+        cout<<"***Anything Else Exit Program***"<<endl;
         cout<<"\n";
         //Input your choice
         cout<<"Selection: ";
         cin>>choice;
         //Solve the problem chosen
         switch(choice){
-            case 1:    //Random Seed and Variable Declaration
+            case 1:     
+                        //Random Seed and Variable Declaration
                         srand(static_cast<unsigned int>(time(0))); 
-                        int value, suit,pTotal,rTotal,total,hTot,hrTot;
+                        int value, suit, pTotal, rTotal, total, hTot, hrTot;
                         char ans;
                         hrTot=0;
                         rTotal=0;    
@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
                         //Option to Allow Player to Hit and Continue Playing
                        if(pTotal<21){
                         cout<<"Would you like another card?\n";
-                        cout<<"Enter y for yes, n for no: ";
+                        cout<<"Enter y for yes, anything else for no: ";
                         cin>>ans;
                            if (ans=='y'||ans=='Y'){
                                //Players Additional Cards
@@ -77,7 +77,21 @@ int main(int argc, char** argv) {
                                cout<<"\n\n";
                                if (pTotal<21){
                                  cout<<"Would you like another card?\n";
-                                 cout<<"Enter y for yes, n for no: ";
+                                 cout<<"Enter y for yes, anything else for no: ";
+                                 cin>>ans;
+                                 if (ans=='y'||ans=='Y'){
+                                  //Players Additional Card
+                                   cout<<"\n";
+                                   cout<<"You have been dealt a ";
+                                   dealCrd(value, suit, total);           
+                                   pTotal=pTotal+value;
+                                   cout<<"\n";
+                                   cout<<"Your score is now: ";
+                                   cout<<pTotal;
+                                   cout<<"\n\n";
+                                   if (pTotal<21){
+                                 cout<<"Would you like another card?\n";
+                                 cout<<"Enter y for yes, anything else for no: ";
                                  cin>>ans;
                                  if (ans=='y'||ans=='Y'){
                                   //Players Additional Card
@@ -89,6 +103,8 @@ int main(int argc, char** argv) {
                                    cout<<"Your score is now: ";
                                    cout<<pTotal;
                                    cout<<"\n\n";
+                                 }  
+                               }
                                  }  
                                }
                             }else;
@@ -133,37 +149,46 @@ int main(int argc, char** argv) {
                            cout<<"\n";
                        }
                         //Exit Stage Right
-            
-            
-            break;
-            case 2:int problem2();break;
-            default: exitMnu=false;
-        }
-    }while(exitMnu);
-    
-    
-    //Exit Stage Right
+                                break;
+                                case 2:
+                                cout<<"\n";
+                                cout<<"The object of the game is to beat the house \n";  
+                                cout<<"by receiving a score of 21 or by getting a higher \n";
+                                cout<<"score than the house without going over 21 with\n";
+                                cout<<"any additional cards. The game begins by dealing\n";
+                                cout<<"two cards to the player; after displaying your\n";
+                                cout<<"score you will have the option to take another\n";
+                                cout<<"card to add to your total score or hold with\n";
+                                cout<<"your existing score. If you hold or go over 21\n";
+                                cout<<"after choosing another card the program will \n";
+                                cout<<"automatically display the house's hand and then\n";
+                                cout<<"determine the outcome.\n";
+                                ;break;
+                                default: exitMnu=false;
+                            }
+                        }while(exitMnu);
+                        //Exit Stage Right
     return 0;
 }
 void dealCrd(int& crdValu, int& crdSuit, int& pTotal){
     //Randomly selects card values
+    int rTotal;
     crdValu=rand()%13+1;
     if (crdValu==10){
         cout<<"Jack of ";
-    }if (crdValu==11||crdValu==1){
-        if (pTotal<=10){            
-            crdValu=11;
-        }else{
-            crdValu=1;
-        }
+    }if (crdValu==11||crdValu==1){        
         cout<<"Ace of ";
+        if (pTotal<10){
+            crdValu=11;
+        }else
+            crdValu=1;
     }if (crdValu==12){
         cout<<"Queen of ";
         crdValu=10;
     }if (crdValu==13){
         cout<<"King of ";
         crdValu=10;
-    }if (crdValu<=9){
+    }if (crdValu<=9&&crdValu>=2){
         cout<<crdValu;
         cout<<" of ";
     }

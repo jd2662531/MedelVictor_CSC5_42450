@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
     //Option to Allow Player to Hit and Continue Playing
    if(pTotal<21){
     cout<<"Would you like another card?\n";
-    cout<<"Enter y for yes, n for no: ";
+    cout<<"Enter y for yes, anything else for no: ";
     cin>>ans;
        if (ans=='y'||ans=='Y'){
            //Players Additional Cards
@@ -54,13 +54,13 @@ int main(int argc, char** argv) {
            cout<<"\n\n";
            if (pTotal<21){
              cout<<"Would you like another card?\n";
-             cout<<"Enter y for yes, n for no: ";
+             cout<<"Enter y for yes, anything else for no: ";
              cin>>ans;
              if (ans=='y'||ans=='Y'){
               //Players Additional Card
                cout<<"\n";
                cout<<"You have been dealt a ";
-               dealCrd(value, suit, total);
+               dealCrd(value, suit, total);           
                pTotal=pTotal+value;
                cout<<"\n";
                cout<<"Your score is now: ";
@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
                cout<<"\n\n";
                if (pTotal<21){
              cout<<"Would you like another card?\n";
-             cout<<"Enter y for yes, n for no: ";
+             cout<<"Enter y for yes, anything else for no: ";
              cin>>ans;
              if (ans=='y'||ans=='Y'){
               //Players Additional Card
@@ -131,11 +131,16 @@ int main(int argc, char** argv) {
 }
 void dealCrd(int& crdValu, int& crdSuit, int& pTotal){
     //Randomly selects card values
+    int rTotal;
     crdValu=rand()%13+1;
     if (crdValu==10){
         cout<<"Jack of ";
     }if (crdValu==11||crdValu==1){        
         cout<<"Ace of ";
+        if (pTotal<10){
+            crdValu=11;
+        }else
+            crdValu=1;
     }if (crdValu==12){
         cout<<"Queen of ";
         crdValu=10;
