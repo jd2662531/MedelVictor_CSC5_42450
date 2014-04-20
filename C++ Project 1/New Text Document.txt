@@ -42,3 +42,13 @@
            hTot=hrTot+value;
           cout<<hTot;
          cout<<"\n\n";
+
+
+
+
+
+if (pTotal<=10){            
+            crdValu=11;
+        }else{
+            crdValu=1;
+        }

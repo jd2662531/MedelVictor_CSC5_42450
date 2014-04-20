@@ -66,6 +66,22 @@ int main(int argc, char** argv) {
                cout<<"Your score is now: ";
                cout<<pTotal;
                cout<<"\n\n";
+               if (pTotal<21){
+             cout<<"Would you like another card?\n";
+             cout<<"Enter y for yes, n for no: ";
+             cin>>ans;
+             if (ans=='y'||ans=='Y'){
+              //Players Additional Card
+               cout<<"\n";
+               cout<<"You have been dealt a ";
+               dealCrd(value, suit, total);
+               pTotal=pTotal+value;
+               cout<<"\n";
+               cout<<"Your score is now: ";
+               cout<<pTotal;
+               cout<<"\n\n";
+             }  
+           }
              }  
            }
         }else;
@@ -109,6 +125,7 @@ int main(int argc, char** argv) {
        cout<<"Stand-Off/Draw, Play Again";
        cout<<"\n";
    }
+ 
     //Exit Stage Right
     return 0;
 }
@@ -117,12 +134,7 @@ void dealCrd(int& crdValu, int& crdSuit, int& pTotal){
     crdValu=rand()%13+1;
     if (crdValu==10){
         cout<<"Jack of ";
-    }if (crdValu==11||crdValu==1){
-        if (pTotal<=10){            
-            crdValu=11;
-        }else{
-            crdValu=1;
-        }
+    }if (crdValu==11||crdValu==1){        
         cout<<"Ace of ";
     }if (crdValu==12){
         cout<<"Queen of ";
@@ -130,7 +142,7 @@ void dealCrd(int& crdValu, int& crdSuit, int& pTotal){
     }if (crdValu==13){
         cout<<"King of ";
         crdValu=10;
-    }if (crdValu<=9){
+    }if (crdValu<=9&&crdValu>=2){
         cout<<crdValu;
         cout<<" of ";
     }
