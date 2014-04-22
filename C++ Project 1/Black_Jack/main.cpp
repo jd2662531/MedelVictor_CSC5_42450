@@ -8,10 +8,7 @@
 //System Libraries
 #include <cstdlib>//Random function srand
 #include <iostream>//Standard input/output
-#include <fstream>//File input/output
 #include <ctime>//time for random and program
-#include <iomanip>//Formatting
-#include <cmath>//Math functions
 using namespace std;
 
 //Global Constants
@@ -121,6 +118,7 @@ int main(int argc, char** argv) {
                        dealCrd(value, suit, total);
                        hTot=hrTot+value;
                        hrTot=hTot;
+                       //Based on Blackjack Rules House continues to deal itself a card if total score is less than 16
                        }while(hTot<16);
                        cout<<"\n";
                        cout<<"The house's score is: ";
@@ -170,27 +168,28 @@ int main(int argc, char** argv) {
                         //Exit Stage Right
     return 0;
 }
+//Function Definition (Card Dealing Function)
 void dealCrd(int& crdValu, int& crdSuit, int& pTotal){
     //Randomly selects card values
     int rTotal;
-    crdValu=rand()%13+1;
-    if (crdValu==10){
+    crdValu=rand()%14+1;
+    if (crdValu<=10&&crdValu>=2){
+        cout<<crdValu;
+        cout<<" of ";
+    }if (crdValu==11){
         cout<<"Jack of ";
-    }if (crdValu==11||crdValu==1){        
+    }if (crdValu==12||crdValu==1){        
         cout<<"Ace of ";
         if (pTotal<10){
             crdValu=11;
         }else
             crdValu=1;
-    }if (crdValu==12){
+    }if (crdValu==13){
         cout<<"Queen of ";
         crdValu=10;
-    }if (crdValu==13){
+    }if (crdValu==14){
         cout<<"King of ";
         crdValu=10;
-    }if (crdValu<=9&&crdValu>=2){
-        cout<<crdValu;
-        cout<<" of ";
     }
     //End of card value selection 
     //Randomly selects suit
