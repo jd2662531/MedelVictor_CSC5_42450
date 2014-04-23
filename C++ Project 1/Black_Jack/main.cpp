@@ -119,7 +119,8 @@ int main(int argc, char** argv) {
                        dealCrd(value, suit, total);
                        hTot=hrTot+value;
                        hrTot=hTot;
-                       //Based on Blackjack Rules House continues to deal itself a card if total score is less than 16
+                       //Based on Blackjack Rules House continues to deal 
+                       //itself a card if total score is less than 16
                        }while(hTot<16);
                        cout<<"\n";
                        cout<<"The house's score is: ";
