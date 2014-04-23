@@ -157,12 +157,22 @@ int main(int argc, char** argv) {
                                 cout<<"score than the house without going over 21 with\n";
                                 cout<<"any additional cards. The game begins by dealing\n";
                                 cout<<"two cards to the player; after displaying your\n";
-                                cout<<"score you will have the option to take another\n";
+                                cout<<"score  and if your score is less than 21 you \n";
+                                cout<<"will have the option to take another\n";
                                 cout<<"card to add to your total score or hold with\n";
                                 cout<<"your existing score. If you hold or go over 21\n";
                                 cout<<"after choosing another card the program will \n";
                                 cout<<"automatically display the house's hand and then\n";
-                                cout<<"determine the outcome.\n";
+                                cout<<"determine the outcome.\n\n";
+                                cout<<"Multiple decks of cards are used with the following values:\n\n";
+                                cout<<"Cards 2 through 10 = face value points\n";
+                                cout<<"Jacks = 10 points\n";
+                                cout<<"Queens = 10 Points\n";
+                                cout<<"Kings = 10 Points\n";
+                                cout<<"Aces = 1 or 11 depends on the player’s total. If player’s total \n";
+                                cout<<"is less than ten points then they hold a value of eleven otherwise \n";
+                                cout<<"the card will hold a value of one.\n";
+
                                 ;break;
                                 default: exitMnu=false;
                             }
@@ -180,6 +190,7 @@ void dealCrd(int& crdValu, int& crdSuit, int& pTotal){
         cout<<" of ";
     }if (crdValu==11){
         cout<<"Jack of ";
+        crdValu=10;
     }if (crdValu==12||crdValu==1){        
         cout<<"Ace of ";
         if (pTotal<10){
