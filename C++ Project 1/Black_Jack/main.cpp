@@ -58,6 +58,7 @@ int main(int argc, char** argv) {
                         cout<<pTotal;
                         cout<<"\n\n";
                         //Option to Allow Player to Hit and Continue Playing
+                        //Three additional cards always exceed a score of 21
                        if(pTotal<21){
                         cout<<"Would you like another card?\n";
                         cout<<"Enter y for yes, anything else for no: ";
