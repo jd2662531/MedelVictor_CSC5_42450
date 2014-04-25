@@ -17,6 +17,12 @@ using namespace std;
 int main(int argc, char** argv) {
      //Declare Variables
     
+    for(int n=2;n<=1475;n++)
+        if (n%2==0||n%3==0||n%5==0){
+            cout<<n;
+            cout<<",";
+        }
+            
     
     
     //Exit Stage Right
