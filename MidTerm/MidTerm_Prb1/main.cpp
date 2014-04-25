@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
             cout<<" ";
         }
         cout<<lines;
-        cout<<endl;
+        cout<<"\n";
     }
     //Exit Stage Right
     return 0;
