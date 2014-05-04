@@ -35,6 +35,7 @@ int main(int argv,char *argc[]){
         case 4:    problem4();break;
         case 5:    problem5();break;
         case 6:    problem6();break;
+        case 7:    problem6();break;
         default:   def(inN);}
     }while(inN>=1&&inN<=6);
     return 0;//If midterm not perfect, return something other than 1
@@ -47,7 +48,8 @@ void Menu(){
     cout<<"Type 3 for problem 3"<<endl;
     cout<<"Type 4 for problem 4"<<endl;
     cout<<"Type 5 for problem 5"<<endl;
-    cout<<"Type 6 for problem 6"<<endl;
+    cout<<"Type 6 for problem 6 |  Non-Functional"<<endl;
+    cout<<"Type 7 for problem 6v2| Non-Functional"<<endl;
     cout<<"Type anything else to exit \n"<<endl;
 }
 
@@ -187,14 +189,17 @@ void problem4(){
         grssPy=totHrs*payRate;
         cout<<"Your gross pay is: $";
         cout<<grssPy;
+        cout<<"\n";
     }if (totHrs>20&&totHrs<=40){
         grssPy=(((totHrs-20)*(payRate*1.5))+(payRate*20));
         cout<<"Your gross pay is: $";
         cout<<grssPy;
+        cout<<"\n";
     }if (totHrs>40){
         grssPy=(20*payRate)+(20*(payRate*1.5))+((totHrs-40)*(payRate*2));
         cout<<"Your gross pay is: $";
         cout<<grssPy;
+        cout<<"\n";
     }    
     //Exit Stage Right
     cout<<"\n";
@@ -330,7 +335,65 @@ void problem5(){
 }
 
 void problem6(){
-        cout<<"In problem # 6"<<endl<<endl;
+         //Declare Variables
+    int i, f, n, count=0;
+//The idea is to run through each of the numbers and check to see if a number is evenly divisible
+    //by 2, 3, and 5 if the number passes this test the number is then divided by 2, 3, or 5 until the 
+    //final division equals to 1 then the program moves to the next number
+    //until it reaches the 1475 number. 
+    n=1475;
+for(i=1; count>n; i++){
+f=i;
+   while(f%2==0){
+        f=f/2;
+   
+        while(f%3==0){
+            f=f/3;   
+         
+            while(f%5==0){
+                f=f/5;  
+  
+                    if(f==1){
+                        count=i;
+                         count++;
+                 }
+            }
+        }
+   }
+} 
+    if(count==1475){
+        cout<<f;
+    }
+    
+}
+
+void problem7(){
+        //Declare Variables
+    int count=0, n, p;
+    do{
+        
+    bool funNum;
+    if(n%2==0||n%3==0||n%5==0){
+       funNum=true;
+    }
+       
+    bool prmNum=true;
+    for(p=2; n<p; p++){
+        if(n%p==0){
+            prmNum=false;
+        }
+    }  
+    int k=2, i;
+    for(i=6; i<k; i++){
+        if (prmNum&&k%1==0)
+            funNum=false;
+}
+  
+    }while(count<1476);
+    cout<<n;
+    //This version of problem 6 also does the same as the previous version with the 
+    //exception of dividing out the number to equal one.
+    //I was not sure how to implement this with this version
 }
 
 void def(int inN){
