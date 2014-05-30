@@ -15,16 +15,25 @@ using namespace std;
 const int COLS=2; //Card Number and Suit
 
 //Function Prototypes
-void dealCrd(int[][COLS], int);
+void dealCrd(int[], int);
 void crdSuit(int [], int);
+void prntCrd(int [], int[], int);
 
 //Execution Starts Here
 int main(int argc, char** argv) {
     //Random Seed and Variable Declaration
     srand(static_cast<unsigned int>(time(0)));
     //Declare Variable
-    int crdValu[13][COLS]= {1,2,3,4,5,6,7,8,9,10,10,10,11};
+    int DECK=13, SUITS=4;
+    int crdValu[DECK];
+    int suit[SUITS];
     
+    
+    
+    //Function Call
+    dealCrd(crdValu,DECK);
+    crdSuit(suit,SUITS);
+    prntCrd(crdValu, suit, DECK);
     
     
     
@@ -32,28 +41,16 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-void dealCrd(int crdValu[][COLS], int n, int suit){
+void dealCrd(int crdValu[], int n){
     for(int i=0;i<n;i++){
-        crdValu[i][0]=rand()%13+1;
-        
+        crdValu[i]=rand()%13+1;
     }
 }
 
-void crdSuit(int suit[], int n){
+void crdSuit(int suit[], int s){
    //Randomly selects suit
-    for(int i=0;i<n;i++){
+    for(int i=0;i<s;i++){
         suit[i]=rand()%4+1;
-    
-        if(suit[i]==1){
-           cout<<"Clubs";
-       }if(suit[i]==2){
-           cout<<"Diamonds";
-       }if(suit[i]==3){
-           cout<<"Spades";
-       }if (suit[i]==4){
-           cout<<"Hearts";
-       }
     }
   //End of Suit Selection 
 }
-
