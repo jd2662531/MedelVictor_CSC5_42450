@@ -15,7 +15,8 @@ using namespace std;
 
 //Function Prototypes
 void card(int [], int);
-void  cardSuit(int suit[], int n);
+void cardSuit(int suit[], int n);
+void dealCrd(int [], int [], int, int);
 
 //Execution Starts Here
 int main(int argc, char** argv) {
@@ -25,9 +26,16 @@ int main(int argc, char** argv) {
     int cards[VALUES], suit[SUITS];
     
     //Function Call
+    
+    //Randomly Selects Card One
     card(cards, VALUES);
     cardSuit(suit, SUITS);
-    
+    dealCrd(cards, suit, VALUES, SUITS);
+    cout<<"\n";
+    //Randomly Selects Card Two
+    card(cards, VALUES);
+    cardSuit(suit, SUITS);
+    dealCrd(cards, suit, VALUES, SUITS);
     
     //Exit Stage Right
     return 0;
@@ -36,12 +44,18 @@ int main(int argc, char** argv) {
 void card(int card[], int n){
     for(int i=0;i<n;i++){
         card[i]=rand()%13+1;
-        cout<<card[i]<<" ";
     }
 }
-void  cardSuit(int suit[], int n){
-    for(int i=0;i<n;i++){
+void  cardSuit(int suit[], int s){
+    for(int i=0;i<s;i++){
         suit[i]=rand()%4+1;
-        cout<<suit[i]<<"*";
     }
+}
+void dealCrd(int card[], int suit[], int n, int s){
+    for(int i=0;i<n;i++){
+        cout<<card[i]<<" ";
+    }
+      for(int i=0;i<s;i++){
+        cout<<suit[i]<<"*";
+      }    
 }
