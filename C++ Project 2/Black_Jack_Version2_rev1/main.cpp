@@ -13,9 +13,9 @@ using namespace std;
 
 //Global Constants
 
+
 //Function Prototypes
-void card(int [], int);
-void cardSuit(int suit[], int n);
+void card(int [], int, int[], int);
 void dealCrd(int [], int [], int, int);
 
 //Execution Starts Here
@@ -26,29 +26,23 @@ int main(int argc, char** argv) {
     int cards[VALUES], suit[SUITS];
     
     //Function Call
-    
     //Randomly Selects Card One
-    card(cards, VALUES);
-    cardSuit(suit, SUITS);
+    card(cards, VALUES, suit, SUITS);
     dealCrd(cards, suit, VALUES, SUITS);
-    cout<<"\n";
+    cout<<" | ";
     //Randomly Selects Card Two
-    card(cards, VALUES);
-    cardSuit(suit, SUITS);
+    card(cards, VALUES, suit, SUITS);
     dealCrd(cards, suit, VALUES, SUITS);
     
     //Exit Stage Right
     return 0;
 }
-
-void card(int card[], int n){
+void card(int card[], int n, int suit[], int s){
     for(int i=0;i<n;i++){
         card[i]=rand()%13+1;
     }
-}
-void  cardSuit(int suit[], int s){
-    for(int i=0;i<s;i++){
-        suit[i]=rand()%4+1;
+       for(int i=0;i<s;i++){
+           suit[i]=rand()%4+1;
     }
 }
 void dealCrd(int card[], int suit[], int n, int s){
@@ -56,6 +50,14 @@ void dealCrd(int card[], int suit[], int n, int s){
         cout<<card[i]<<" ";
     }
       for(int i=0;i<s;i++){
-        cout<<suit[i]<<"*";
+          if(suit[i]==1){
+              cout<<" of Hearts";
+          }else if(suit[i]==2){
+              cout<<" of Diamonds";
+          }else if(suit[i]==3){
+              cout<<" of Spades";
+          }else if(suit[i]==4){
+              cout<<" of Clubs";
+          }
       }    
 }
