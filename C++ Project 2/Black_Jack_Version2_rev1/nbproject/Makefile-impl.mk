@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=black_jack_version2_rev1
+PROJECTNAME=Black_Jack_Version2_rev1
 
 # Active Configuration
 DEFAULTCONF=Debug
