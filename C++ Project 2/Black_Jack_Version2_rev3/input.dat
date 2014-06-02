@@ -1,0 +1,10 @@
+Rules of My Black Jack Game
+
+The object of the game is to beat the house by receiving a score of 21 or by getting a higher score than the house without going over 21 with any additional cards. The game begins by dealing two cards to the player; after displaying your score and if your score is less than 21 you will have the option to take another card to add to your total score or hold with your existing score. If you hold or go over 21 after choosing another card the program will automatically display the house's hand and then determine the outcome.
+
+Multiple decks of cards are used with the following values:
+Cards 2 through 10 = face value points
+Jacks = 10 points
+Queens = 10 Points
+Kings = 10 Points
+Aces = 1 or 11 depends on the player’s total. If player’s total is less than ten points then they hold a value of eleven otherwise the card will hold a value of one.

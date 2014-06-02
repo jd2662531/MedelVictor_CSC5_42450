@@ -1,9 +1,8 @@
 /* 
  * File:   main.cpp
  * Author: Victor Medel
- * Created on May 29, 2014, 6:20 PM
+ * Created on June 1, 2014, 9:30 PM
  * CSC 5 (42450) | Project 2: Black Jack Game Version 2
- * 
  */
 
 //System Libraries
@@ -17,12 +16,10 @@ using namespace std;
 
 //Global Constants
 
-
 //Function Prototypes
 void dealCrd(string card[], int& randCard, string suit[], int& randSuit);
 void prntCrd(string card[], int& randCard, string suit[], int& randSuit);
 int calc(int& randCard, int& valu);
-
 
 //Execution Starts Here
 int main(int argc, char** argv) {
@@ -35,6 +32,25 @@ int main(int argc, char** argv) {
     char ans;
     ifstream infile;
     ofstream outfile;
+    int choice;
+    bool exitMnu=true;
+    
+    //Loop until exit
+    do{
+        //Output Menu
+        cout<<"\n";
+        cout<<"Select From The Menu"<<endl;
+        cout<<"\n";
+        cout<<"1. Play Blackjack"<<endl;
+        cout<<"2. Blackjack Game Overview"<<endl;
+        cout<<"***Anything Else Exit Program***"<<endl;
+        cout<<"\n";
+        //Input your choice
+        cout<<"Selection: ";
+        cin>>choice;
+        //Solve the problem chosen
+        switch(choice){
+            case 1:     
     //Initialize Player and House Running Totals
     hrTot=0;
     rTotal=0; 
@@ -198,7 +214,6 @@ int main(int argc, char** argv) {
                                 }
                                 //End of Ace Re-Adjustment  
                        hTotal=hTotal+valu;
-                       
                        //Based on Blackjack Rules House continues to deal 
                        //itself a card if total score is less than 16
                        }while(hTotal<16);
@@ -240,7 +255,18 @@ int main(int argc, char** argv) {
                            cout<<"\n";
                        }
                          outfile.close();
-    //Exit Stage Right
+                        //Exit Stage Right
+                                break;
+                                case 2:
+                                 
+                                    
+                              ///Read from file and output here!   
+                                    
+                                ;break;
+                                default: exitMnu=false;
+                            }
+                        }while(exitMnu);
+                        //Exit Stage Right
     return 0;
 }
 void dealCrd(string card[], int& randCard, string suit[], int& randSuit){
