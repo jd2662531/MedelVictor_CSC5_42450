@@ -257,11 +257,28 @@ int main(int argc, char** argv) {
                          outfile.close();
                         //Exit Stage Right
                                 break;
-                                case 2:
-                                 
-                                    
-                              ///Read from file and output here!   
-                                    
+                                case 2:   
+                              cout<<"\n";
+                                cout<<"The object of the game is to beat the house \n";  
+                                cout<<"by receiving a score of 21 or by getting a higher \n";
+                                cout<<"score than the house without going over 21 with\n";
+                                cout<<"any additional cards. The game begins by dealing\n";
+                                cout<<"two cards to the player; after displaying your\n";
+                                cout<<"score  and if your score is less than 21 you \n";
+                                cout<<"will have the option to take another\n";
+                                cout<<"card to add to your total score or hold with\n";
+                                cout<<"your existing score. If you hold or go over 21\n";
+                                cout<<"after choosing another card the program will \n";
+                                cout<<"automatically display the house's hand and then\n";
+                                cout<<"determine the outcome.\n\n";
+                                cout<<"Multiple decks of cards are used with the following values:\n\n";
+                                cout<<"Cards 2 through 10 = face value points\n";
+                                cout<<"Jacks = 10 points\n";
+                                cout<<"Queens = 10 Points\n";
+                                cout<<"Kings = 10 Points\n";
+                                cout<<"Aces = 1 or 11 depends on the player's total. If player's total \n";
+                                cout<<"is less than ten points then they hold a value of eleven otherwise \n";
+                                cout<<"the card will hold a value of one.\n";  
                                 ;break;
                                 default: exitMnu=false;
                             }
