@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
     ofstream outfile;
     int choice;
     bool exitMnu=true;
-    
+    string next;
     //Loop until exit
     do{
         //Output Menu
@@ -54,6 +54,17 @@ int main(int argc, char** argv) {
     //Initialize Player and House Running Totals
     hrTot=0;
     rTotal=0; 
+    //Open File to read welcome message
+                         infile.open("input.dat");
+                             if(outfile.fail()){
+                                cout<<"Input file failed to open.\n";
+                                exit(1);
+                            }
+                         while (infile>>next){
+                             cout<<next<<" ";
+                         }
+                         infile.close();
+                         cout<<endl<<endl;
     //Function Call
     dealCrd(card,randCard,suit,randSuit);
     prntCrd(card,randCard,suit,randSuit);
