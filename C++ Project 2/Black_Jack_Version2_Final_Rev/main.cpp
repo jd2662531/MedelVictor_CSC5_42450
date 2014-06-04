@@ -31,12 +31,14 @@ int main(int argc, char** argv) {
     string card[14]={"Ace","2","3","4","5","6","7","8","9","10","Ace","Jack","Queen","King"};  
     char ans;
     ifstream infile;
-    ofstream outfile;
+    ofstream outfile,outfile2;
     int choice;
     bool exitMnu=true;
-    string next;
+    string next,name;
     //Loop until exit
     do{
+        
+        
         //Output Menu
         cout<<"\n";
         cout<<"Select From The Menu"<<endl;
@@ -54,12 +56,23 @@ int main(int argc, char** argv) {
     //Initialize Player and House Running Totals
     hrTot=0;
     rTotal=0; 
-    //Open File to read welcome message
-                         infile.open("input.dat");
-                             if(outfile.fail()){
+    //Open File to write name
+                         outfile2.open("output2.dat", ios::app);
+                             if(outfile2.fail()){
                                 cout<<"Input file failed to open.\n";
                                 exit(1);
                             }
+                         cout<<"Please enter your first name: ";
+                         cin>>name;
+                         outfile2<<name<<" ";
+                         outfile2.close();
+    //Open File to read welcome message
+                         infile.open("input.dat");
+                             if(infile.fail()){
+                                cout<<"Input file failed to open.\n";
+                                exit(1);
+                            }
+                         cout<<name<<" ";
                          while (infile>>next){
                              cout<<next<<" ";
                          }
@@ -234,35 +247,35 @@ int main(int argc, char** argv) {
                        cout<<"\n";
                        //Outcome Output
                        //Open File to write results
-                         outfile.open("output.dat");
+                         outfile.open("output.dat", ios::app);
                              if(outfile.fail()){
                                 cout<<"Input file failed to open.\n";
                                 exit(1);
                             }
                        if(pTotal==21||(pTotal>hTotal&&pTotal<21)){
                            cout<<"\n";
-                           cout<<"Congratulations! You have won";
-                           outfile<<"Congratulations! You have won some $$. Use this ticket to cash out.";
+                           cout<<"***Congratulations! You have won***";
+                           outfile<<"Win"<<" "<<endl;
                            cout<<"\n";
                        }else if(hTotal>21&&pTotal<=21) {
                            cout<<"\n";
-                           cout<<"Congratulations! You have won";
-                           outfile<<"Congratulations! You have won some $$. Use this ticket to cash out.";
+                           cout<<"***Congratulations! You have won***";
+                           outfile<<"Win"<<" "<<endl;
                            cout<<"\n";
                        }else if(pTotal>21){
                            cout<<"\n";
-                           cout<<"Bust";
-                           outfile<<"You Lost.... Nothing to see here.";
+                           cout<<"***Bust***";
+                           outfile<<"Loss"<<" "<<endl;
                            cout<<"\n"; 
                        }else if(pTotal<hTotal&&hTotal<=21){
-                          cout<<"\n";
-                           cout<<"House Wins";
-                           outfile<<"You Lost.... Nothing to see here.";
+                           cout<<"\n";
+                           cout<<"***House Wins***";
+                           outfile<<"Loss"<<" "<<endl;
                            cout<<"\n";
                        }else if(pTotal==hTotal){
                            cout<<"\n";
-                           cout<<"Stand-Off/Draw, Play Again";
-                           outfile<<"Do you really want to try again?";
+                           cout<<"***Stand-Off/Draw, Play Again***";
+                           outfile<<"Tie"<<" "<<endl;
                            cout<<"\n";
                        }
                          outfile.close();
@@ -304,9 +317,9 @@ void dealCrd(string card[], int& randCard, string suit[], int& randSuit){
 }
 void prntCrd(string card[], int& randCard, string suit[], int& randSuit){
     //Outputs One Card
-    cout<<card[randCard];
+    cout<<right<<setw(2)<<card[randCard];
     cout<<" ";
-    cout<<suit[randSuit];
+    cout<<left<<setw(2)<<suit[randSuit];
 }
 int calc(int& randCard, int& valu){
     //Assigns Value to Card Dealt
