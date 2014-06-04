@@ -16,6 +16,7 @@ using namespace std;
 
 //Global Constants
 
+
 //Function Prototypes
 void dealCrd(string card[], int& randCard, string suit[], int& randSuit);
 void prntCrd(string card[], int& randCard, string suit[], int& randSuit);
@@ -37,8 +38,6 @@ int main(int argc, char** argv) {
     string next,name;
     //Loop until exit
     do{
-        
-        
         //Output Menu
         cout<<"\n";
         cout<<"Select From The Menu"<<endl;
