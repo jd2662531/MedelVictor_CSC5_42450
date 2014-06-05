@@ -11,7 +11,7 @@
 using namespace std;
 
 //Global Constants
-
+const int COLS=2;
 
 //Function Prototypes
 
@@ -24,4 +24,9 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-void track()
+void dealCrd(string card[][COLS], int& count){
+    for(int rndCrd=0;rndCrd<14;rndCrd++)
+        for(int rndSuit=0;rndSuit<4;rndSuit++){
+            card[rndCrd][rndSuit]=0;
+        }
+   }
