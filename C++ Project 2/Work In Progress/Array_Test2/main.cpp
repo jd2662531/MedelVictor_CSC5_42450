@@ -8,25 +8,42 @@
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
+#include <iomanip>
+#include <string>
 using namespace std;
 
 //Global Constants
-const int COLS=2;
+ 
 
 //Function Prototypes
 
 
 //Execution Starts Here
 int main(int argc, char** argv) {
+    //Declare Variables
+   
     
-  
+    int randCard=14, randSuit=4;
+    int suit[randSuit];
+    int card[randCard];
+    
+    
+    //dealCrd(card,randCard,suit,randSuit);
+    //prntCrd(card,randCard,suit,randSuit);
+    
+    //Randomly Selects Card and Suit
+    randSuit=rand()%4;
+    randCard=rand()%14;
+    card[randCard];
+    suit[randSuit];
+
+    //Outputs One Card
+    cout<<right<<setw(2)<<card[randCard];
+    cout<<" ";
+    cout<<left<<setw(2)<<suit[randSuit];
+
+    
     //Exit Stage Right
     return 0;
 }
 
-void dealCrd(string card[][COLS], int& count){
-    for(int rndCrd=0;rndCrd<14;rndCrd++)
-        for(int rndSuit=0;rndSuit<4;rndSuit++){
-            card[rndCrd][rndSuit]=0;
-        }
-   }

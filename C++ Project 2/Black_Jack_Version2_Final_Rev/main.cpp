@@ -312,7 +312,9 @@ int main(int argc, char** argv) {
 void dealCrd(string card[], int& randCard, string suit[], int& randSuit){
     //Randomly Selects Card and Suit
     randSuit=rand()%4;
-    randCard=rand()%14; 
+    randCard=rand()%14;
+    card[randCard];
+    suit[randSuit];
 }
 void prntCrd(string card[], int& randCard, string suit[], int& randSuit){
     //Outputs One Card
