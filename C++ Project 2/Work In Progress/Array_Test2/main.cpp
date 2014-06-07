@@ -13,37 +13,51 @@
 using namespace std;
 
 //Global Constants
- 
+ const int COLS=2;
 
 //Function Prototypes
-
+void dealCrd(int card[][COLS], int n, int randSuit);
+void prntCrd(int card[][COLS], int n, int randSuit);
+int suit(int& randSuit);
 
 //Execution Starts Here
 int main(int argc, char** argv) {
     //Declare Variables
-   
+    srand(static_cast<unsigned int>(time(0)));
+    int n=1;
+    int card[n][COLS], randSuit=rand()%4+1;
     
-    int randCard=14, randSuit=4;
-    int suit[randSuit];
-    int card[randCard];
-    
-    
-    //dealCrd(card,randCard,suit,randSuit);
-    //prntCrd(card,randCard,suit,randSuit);
-    
-    //Randomly Selects Card and Suit
-    randSuit=rand()%4;
-    randCard=rand()%14;
-    card[randCard];
-    suit[randSuit];
-
-    //Outputs One Card
-    cout<<right<<setw(2)<<card[randCard];
-    cout<<" ";
-    cout<<left<<setw(2)<<suit[randSuit];
-
-    
+    dealCrd(card, n, randSuit);
+    prntCrd(card, n, randSuit);    
     //Exit Stage Right
     return 0;
 }
 
+void dealCrd(int card[][COLS], int n, int randSuit){
+    for(int i=0;i<n;i++){
+        card[i][0]=rand()%14+1;
+        card[i][1]=suit(randSuit);
+    }
+}
+
+void prntCrd(int card[][COLS], int n, int randSuit){    
+    for (int i=0;i<n;i++){
+       cout<<card[i][0];
+       cout<<" of ";
+        if(card[i][0]==0){
+            cout<<"Hearts";
+        }else if(card[i][0]==1){
+            cout<<"Diamonds";
+        }else if(card[i][0]==2){
+            cout<<"Clubs";
+        }else if(card[i][0]==3){
+            cout<<"Spades";
+        }
+    }
+}
+
+int suit(int& randSuit){
+    randSuit=rand()%4+1;
+    
+    return randSuit;
+}
