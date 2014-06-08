@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
     string suit[4]={"of Hearts","of Diamonds","of Spades","of Clubs"};
     string card[14]={"Ace","2","3","4","5","6","7","8","9","10","Ace","Jack","Queen","King"};  
     char ans;
-    fstream infile;
+    ifstream infile;
     ofstream outfile,outfile2;
     int choice;
     bool exitMnu=true;
