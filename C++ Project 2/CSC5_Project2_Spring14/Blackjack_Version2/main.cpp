@@ -16,7 +16,6 @@ using namespace std;
 
 //Global Constants
 
-
 //Function Prototypes
 void dealCrd(string card[], int& randCard, string suit[], int& randSuit);
 void prntCrd(string card[], int& randCard, string suit[], int& randSuit);
@@ -106,7 +105,7 @@ int main(int argc, char** argv) {
         cout<<"\n";
                        //Option to Allow Player to Hit and Continue Playing
                        //Three additional cards always exceed a score of 21
-                       if(pTotal<21){
+                       if(pTotal<21){//Additional Card One
                         cout<<"Would you like another card?\n";
                         cout<<"Enter y for yes, anything else for no: ";
                         cin>>ans;
@@ -129,7 +128,7 @@ int main(int argc, char** argv) {
                                cout<<"Your score is now: ";
                                cout<<pTotal;
                                cout<<"\n\n";
-                                    if (pTotal<21){
+                                    if (pTotal<21){//Additional Card Two
                                          cout<<"Would you like another card?\n";
                                          cout<<"Enter y for yes, anything else for no: ";
                                          cin>>ans;
@@ -152,7 +151,7 @@ int main(int argc, char** argv) {
                                    cout<<"Your score is now: ";
                                    cout<<pTotal;
                                    cout<<"\n\n";
-                                   if (pTotal<21){
+                                   if (pTotal<21){//Additional Card Three
                                      cout<<"Would you like another card?\n";
                                      cout<<"Enter y for yes, anything else for no: ";
                                      cin>>ans;
@@ -176,7 +175,7 @@ int main(int argc, char** argv) {
                                    cout<<pTotal;
                                    cout<<"\n\n";
                                    //Fourth Card Option for the Risk Taker
-                                   if(pTotal<21){
+                                   if(pTotal<21){//Additional Card Four
                                        cout<<"Would you like another card?\n";
                                      cout<<"Enter y for yes, anything else for no: ";
                                      cin>>ans;
@@ -384,7 +383,6 @@ void prntCrd(int card[][COLS], int n, int randSuit){
         }
     }
 }
-
 int suit(int& randSuit){
     randSuit=rand()%4+1;
     return randSuit;
