@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Debug=final_4
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/final_4
+CND_ARTIFACT_NAME_Debug=final_prb4
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/final_prb4
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Debug=final4.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/final4.tar
+CND_PACKAGE_NAME_Debug=finalprb4.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/finalprb4.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Release=final_4
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/final_4
+CND_ARTIFACT_NAME_Release=final_prb4
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/final_prb4
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Release=final4.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/final4.tar
+CND_PACKAGE_NAME_Release=finalprb4.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/finalprb4.tar
 #
 # include compiler specific variables
 #
