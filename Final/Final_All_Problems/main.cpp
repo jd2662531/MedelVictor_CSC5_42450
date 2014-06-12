@@ -17,6 +17,7 @@
 using namespace std;
 
 //Global Constant
+const int COLS=6;
 
 //Function Prototypes
 void Menu();
@@ -37,6 +38,8 @@ void swap(string& a, string& b);//Problem 5
 void prntAry(string a[],int n,int perLine);//Problem 5
 void sort(string a[],int n);//Problem 5
 void lstSmal(string a[],int n,int pos);//Problem 5
+void read(int [][COLS],int,ifstream&,ofstream&,int);//Problem 6
+void add(int [][COLS], int );//Problem 6
 
 //Execution Starts Here
 int main(int argc, char** argv) {
@@ -66,7 +69,7 @@ void Menu(){
     cout<<"Type 3 for problem 3"<<endl;
     cout<<"Type 4 for problem 4"<<endl;
     cout<<"Type 5 for problem 5"<<endl;
-    cout<<"Type 6 for problem 6"<<endl;
+    cout<<"Type 6 for problem 6 | Non-functional"<<endl;
     cout<<"Type anything else to exit"<<endl;
 }
 int getN(){
@@ -210,7 +213,20 @@ void problem5(){
 }
 
 void problem6(){
-    
+    //Utilized a lot of help from the web to try to develop this program.
+    //Unfortunately, I would not get it to work.
+    //Declare Variables
+    ifstream input;
+    ofstream output;
+    const int N=30;
+    int numbers[N][COLS];
+    input.open("table.dat");
+    output.open("augtable.dat");
+    read(numbers,N,input,output,6);
+    add(numbers,N);   
+    input.close();
+    output.close();
+    //Exit Stage Right
 }
 
 void def(int inN){
@@ -281,4 +297,40 @@ void prntAry(string a[],int n,int perLine){
         if(i%perLine==(perLine-1))cout<<endl;
     }
     cout<<endl;
+}
+//Problem 6
+void read(int b[][COLS], int n, ifstream& input, ofstream& output, int perLine){
+    for(int rows=0;rows<n;rows++){
+        input>>b[rows][COLS];
+        cout<<b[rows][COLS]<<" ";
+        if(rows%perLine==(perLine-1))cout<<endl;
+    }
+    cout<<endl;
+}
+void add(int b[][COLS], int n){
+   int rowSum[COLS] = {0};
+   int colSum[5] = {0};
+   //Loop Through Sum
+    for(int i=0;i<5;i++){
+     for(int j=0;j<6;j++){
+        rowSum[j] += b[i][j];
+         colSum[i] += b[i][j];
+      }
+  }
+   
+ //Print Array
+  for(int i=0;i!=5;++i){
+      for(int j=0;j!=6;++j){
+         cout << b[i][j] << " ";
+      }
+     cout << endl;
+  }
+   //print result
+  for(int n = 0; n != 6; ++n){
+	  cout <<rowSum[n] << " ";
+  }
+     for (int s=0;s!=5;++s){
+           cout <<colSum[s]<<"";
+     }
+  cout << endl;
 }
