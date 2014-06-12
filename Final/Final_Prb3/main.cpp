@@ -30,8 +30,6 @@ int main(int argc, char** argv) {
         cin>>size;
         fllVec(even, odd, size);
         prntVec(even, odd, size);
-
-    
     //Exit Stage Right
     return 0;
 }
